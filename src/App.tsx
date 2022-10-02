@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Icon, IconName } from "./components/icon";
+import { icons } from "./components/icon/icons";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-wrap gap-4 p-4">
+      {Object.keys(icons).map((icon) => (
+        <div className="flex flex-col items-center">
+          <Icon icon={icon as IconName} />
+          <span>{icon}</span>
+        </div>
+      ))}
     </div>
   );
 }
