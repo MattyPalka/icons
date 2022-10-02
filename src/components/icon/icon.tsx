@@ -13,6 +13,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   rotate?: number;
 }
 
+/**
+ *
+ * @param icon string key icon name
+ * @param className string classes for styling
+ * @param rotate optional number rotation of the icon
+ * @returns Icon react component
+ */
 export const Icon = ({ icon, className, rotate, color, ...rest }: Props) => {
   return (
     <div
@@ -23,9 +30,9 @@ export const Icon = ({ icon, className, rotate, color, ...rest }: Props) => {
       }}
       {...rest}
     >
-      <span>
-        <Suspense fallback={<div />}>{createElement(icons[icon])}</Suspense>
-      </span>
+      <Suspense fallback={<div />}>
+        {createElement(icons[icon], { className: "w-full h-full" })}
+      </Suspense>
     </div>
   );
 };

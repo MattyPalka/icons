@@ -67,6 +67,8 @@ export const icons = {
 
   Smile: lazy(async () => import("./assets/smile.svg")),
   SignIn: lazy(async () => import("./assets/sign-in.svg")),
+
+  SignOut: lazy(async () => import("./assets/sign-out.svg")),
   TimeForward: lazy(async () => import("./assets/time-forward.svg")),
 
   Trophy: lazy(async () => import("./assets/trophy.svg")),
