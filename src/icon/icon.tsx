@@ -23,16 +23,21 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 export const Icon = ({ icon, className, rotate, color, ...rest }: Props) => {
   return (
     <div
-      className={classnames("flex items-center justify-center", className)}
+      className={className}
       aria-label={icon}
       role="img"
       style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         transform: rotate ? `rotate(${rotate}deg)` : undefined,
       }}
       {...rest}
     >
       <Suspense fallback={<div />}>
-        {createElement(icons[icon], { className: "w-full h-full" })}
+        {createElement(icons[icon], {
+          style: { width: "100%", height: "100%" },
+        })}
       </Suspense>
     </div>
   );
