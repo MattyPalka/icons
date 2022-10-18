@@ -1,5 +1,5 @@
-import { Icon, IconName } from "./components/icon";
-import { icons } from "./components/icon/icons";
+import { Icon, IconName } from "./icon";
+import { icons } from "./icon/icons";
 
 function App() {
   return (
