@@ -1,14 +1,7 @@
-import {
-  findByText,
-  render,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Icon, IconName } from "./icon";
 import { icons } from "./icons";
 import { axe, toHaveNoViolations } from "jest-axe";
-import React from "react";
 
 describe("<Icon />", () => {
   expect.extend(toHaveNoViolations);
